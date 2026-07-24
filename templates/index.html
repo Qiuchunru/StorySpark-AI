@@ -1,1 +1,132 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>StorySpark AI</title>
+
+    <link rel="stylesheet" 
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<h1>✨ StorySpark AI</h1>
+
+<p class="subtitle">
+Your AI Creative Writing Assistant
+</p>
+
+
+
+<form method="POST">
+
+
+<label>
+Story Idea
+</label>
+
+<textarea 
+name="prompt"
+placeholder="Example: A robot exploring Mars"
+required></textarea>
+
+
+
+<label>
+Genre
+</label>
+
+<select name="genre">
+
+<option>
+Fantasy
+</option>
+
+<option>
+Science Fiction
+</option>
+
+<option>
+Adventure
+</option>
+
+<option>
+Mystery
+</option>
+
+</select>
+
+
+
+<label>
+Tone
+</label>
+
+<select name="tone">
+
+<option>
+Inspirational
+</option>
+
+<option>
+Dark
+</option>
+
+<option>
+Funny
+</option>
+
+<option>
+Emotional
+</option>
+
+</select>
+
+
+
+<button type="submit">
+Generate Story
+</button>
+
+
+</form>
+
+
+
+{% if result %}
+
+<div class="result">
+
+
+<h2>
+Generated Story
+</h2>
+
+
+<pre>
+{{ result }}
+</pre>
+
+
+</div>
+
+
+{% endif %}
+
+
+
+</div>
+
+
+</body>
+
+</html>
